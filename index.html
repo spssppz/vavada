@@ -1,5 +1,5 @@
 <!doctype html>
-<html amp lang="en">
+<html amp lang="ru">
 
 <head>
 	<meta charset="utf-8">
@@ -117,6 +117,8 @@
 			align-items: center;
 			font-size: 14px;
 			font-weight: 700;
+			position: relative;
+			z-index: 11;
 		}
 
 		.header__logo img {
@@ -127,8 +129,9 @@
 			margin-right: 10px;
 		}
 
-		.header__right {
+		.header-menu__link {
 			font-weight: 500;
+			font-size: 16px;
 		}
 
 		.banner {
@@ -262,6 +265,12 @@
 		.item a {
 			color: #0000ee;
 			text-decoration-line: underline;
+		}
+
+		.header-check {
+			opacity: 0;
+			position: fixed;
+			left: 100%;
 		}
 
 		.figure {
@@ -438,6 +447,58 @@
 				font-size: 14px;
 				margin-bottom: 12px;
 			}
+
+			.header-menu {
+				width: 38px;
+				height: 26px;
+				display: block;
+				border: none;
+				position: relative;
+			}
+
+			.header-menu::after,
+			.header-menu span,
+			.header-menu::before {
+				background: black;
+				position: absolute;
+				width: 100%;
+				height: 3px;
+			}
+
+			.header-menu span {
+				top: 12px;
+			}
+
+			.header-menu::after {
+				content: '';
+				bottom: 0;
+				left: 0;
+			}
+
+			.header-menu::before {
+				content: '';
+				top: 0;
+				left: 0;
+			}
+
+			.header-menu__wrapper {
+				visibility: hidden;
+				position: fixed;
+				top: 0;
+				z-index: 10;
+				left: 0;
+				width: 100%;
+				height: 100vh;
+				background-color: #fff;
+				padding-top: 100px;
+				text-align: center;
+			}
+
+
+
+			.header-check:checked+.header-menu .header-menu__wrapper {
+				visibility: visible;
+			}
 		}
 	</style>
 	<noscript>
@@ -450,7 +511,6 @@
 			}
 		</style>
 	</noscript>
-	<!-- <link href="style.css" rel="stylesheet"> -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -464,7 +524,13 @@
 				<img src="1.jpg" alt="" width="32" height="32">
 				ВАВАДА
 			</a>
-			<a href="" class="header__right">Перейти в казино ВАВАДА</a>
+			<input id="burger" type="checkbox" class="header-check" />
+			<label for="burger" class="header-menu">
+				<span></span>
+				<div class="header-menu__wrapper">
+					<a class="header-menu__link" href="">Перейти в казино ВАВАДА</a>
+				</div>
+			</label>
 		</div>
 	</header>
 	<main>
@@ -669,12 +735,12 @@
 				<a class="content__btn btn" href="">ПРОВЕРЕННОЕ ЗЕРКАЛО</a>
 				<h2 class="content__subtitle">Обзор зеркал казино VAVADA</h2>
 				<div class="content__gallery">
-					<img src="1.jpg" alt="" />
-					<img src="1.jpg" alt="" />
-					<img src="1.jpg" alt="" />
-					<img src="1.jpg" alt="" />
-					<img src="1.jpg" alt="" />
-					<img src="1.jpg" alt="" />
+					<img src="1.jpg" width="50" height="50" alt="" />
+					<img src="1.jpg" width="50" height="50" alt="" />
+					<img src="1.jpg" width="50" height="50" alt="" />
+					<img src="1.jpg" width="50" height="50" alt="" />
+					<img src="1.jpg" width="50" height="50" alt="" />
+					<img src="1.jpg" width="50" height="50" alt="" />
 				</div>
 			</div>
 		</div>
